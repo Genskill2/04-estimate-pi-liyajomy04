@@ -30,7 +30,7 @@ int main(void) {
   }
 
     
-  for (int i=2000; i<5000; i++) {
+  for (int i=0; i<2800; i++) {
     pi0 = mc_pi(i);
     if (!(fabs(pi0 - M_PI) < 0.4)) {
       printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi0);
