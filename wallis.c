@@ -1,38 +1,10 @@
-#include <stdio.h>
-
-
-int main()
+float wallis_pi(int count)
 {
-  int n[2800 + 1];
-  int i, k;
-  int b, d;
-  int c = 0;
-
-    for (i = 0; i < 2800; i++)
-    {
-        n[i] = 2000;
-    }
-
-    for (k = 2800; k > 0; k -= 14)
-    {
-        d = 0;
-
-        i = k;
-        for (;;)
-        {
-            d += n[i] * 10000;
-            b = 2 * i - 1;
-
-            n[i] = d % b;
-            d /= b;
-            i--;
-            if (i == 0) break;
-            d *= i;
-        }
-        printf("%.4d", c + d / 10000);
-        c = d % 10000;
-    }
-
-    return 0;
+  float pi = 1.0;
+  for(int i=1;i<count;i++)
+  {
+    float num = 4.0*i*i;
+    pi *= num/(num-1);
+  }
+  return pi*2;
 }
-
